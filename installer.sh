@@ -8,6 +8,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 # apt
 sudo apt update
+sudo apt upgrade -y
 sudo apt install zsh -y
 sudo apt install tilda -y
 sudo apt install plank -y
@@ -22,17 +23,17 @@ sudo apt install idle3 -y
 sudo apt install keepassx -y
 sudo apt install nodejs npm -y
 npm install -g npx
+sudo apt install python3-pip -y
 sudo apt install rpi-imager -y
 sudo apt install virtualbox -y
 sudo apt install vlc -y
 sudo apt install whatsapp-desktop -y
-sudo apt install texlive-full -y
+# sudo apt install texlive-full -y
 sudo apt install texmaker -y
 sudo apt purge hexchat -y
 sudo apt purge thunderbird -y
 
 # PPAs
-
 # Ulancher
 sudo add-apt-repository ppa:agornostal/ulauncher -y && sudo apt update && sudo apt install ulauncher -y
 
@@ -42,15 +43,15 @@ sudo apt-get update
 sudo apt-get install indicator-sound-switcher -y
 
 # wget
-
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-rm google-chrome-sable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
+rm -f google-chrome-sable_current_amd64.deb
 
 # TorGuard
 wget https://torguard.net/downloads/new/torguard-latest-amd64.deb
-sudo apt install ./torguard-latest-amd64.deb
+sudo apt install ./torguard-latest-amd64.deb -y
+rm -f ./torguard-latest-amd64.deb
 
 # VSCode
 wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
@@ -65,7 +66,7 @@ sudo apt update && sudo apt install signal-desktop -y
 # Slack
 wget https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-desktop-4.23.0-amd64.deb
 sudo apt install ./slack-desktop-4.23.0-amd64.deb
-rm slack-desktop-4.23.0-amd64.deb
+rm -f slack-desktop-4.23.0-amd64.deb
 
 # insync
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
@@ -79,7 +80,9 @@ wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage
 # Bottom
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.6/bottom_0.6.6_amd64.deb
 sudo dpkg -i bottom_0.6.6_amd64.deb
+rm -f bottom_0.6.6_amd64.deb
 
+# others
 # libinputgestures
 sudo apt-get install wmctrl xdotool -y
 sudo apt-get install libinput-tools -y
@@ -99,7 +102,7 @@ pip3 install pandas
 
 # Cinnamon
 mv ~/.cinnamon ~/.cinnamon-old
-cp ./cinnamon ~/.cinnamon
+cp ./.cinnamon ~/.cinnamon
 
 # zsh
 echo 'alias update="sudo apt update && sudo apt list --upgradable"' >> ~/.zshrc
