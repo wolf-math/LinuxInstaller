@@ -62,7 +62,7 @@ rm -f ./torguard-latest-amd64.deb
 
 # rpi-imager
 wget https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb
-sudo apt install ./imager=_latest_amd64.deb -y
+sudo apt install ./imager_latest_amd64.deb -y
 rm -f imager_latest_amd64.deb
 
 # VSCode
@@ -111,9 +111,9 @@ mkdir ~/Applications
 wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage -P ~/Applications/
 
 # Red Alert
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage -P /Applications/
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage -P /Applications/
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage -P /Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage -P ~/Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage -P ~/Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage -P ~/Applications/
 
 # pip3 installs
 pip3 install jupyter
