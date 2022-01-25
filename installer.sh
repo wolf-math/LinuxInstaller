@@ -11,7 +11,25 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 # apt
 sudo apt update
 sudo apt upgrade -y
-sudo apt install zsh tilda plank appimagelauncher asunder cheese gedit gparted easytag flameshot idle3 keepassx nodejs npm pinta python3-pip virtualbox vlc whatsapp-desktop -y
+sudo apt install zsh -y
+sudo apt install tilda -y
+sudo apt install plank -y
+sudo apt install appimagelauncher -y
+sudo apt install asunder -y
+sudo apt install cheese -y
+sudo apt install gedit -y
+sudo apt install gparted -y
+sudo apt install easytag -y
+sudo apt install flameshot -y
+sudo apt install idle3 -y
+sudo apt install keepassx -y
+sudo apt install nodejs -y
+sudo apt install npm -y
+sudo apt install pinta -y
+sudo apt install python3-pip -y
+sudo apt install virtualbox -y
+sudo apt install vlc -y
+sudo apt install whatsapp-desktop -y
 sudo apt purge hexchat -y
 sudo apt purge thunderbird -y
 npm install -g npx
@@ -24,7 +42,7 @@ sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt-add-repository ppa:yktooo/ppa -y
 
 # AppimageLauncher
-sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 
 sudo apt update
 sudo apt install indicator-sound-switcher -y
@@ -44,7 +62,7 @@ rm -f ./torguard-latest-amd64.deb
 
 # rpi-imager
 wget https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb
-sudo apt install ./imager_latest_amd64.deb
+sudo apt install ./imager=_latest_amd64.deb -y
 rm -f imager_latest_amd64.deb
 
 # VSCode
@@ -76,7 +94,7 @@ rm -f bottom_0.6.6_amd64.deb
 
 # others
 # libinputgestures
-cd
+cd ~
 sudo apt install wmctrl xdotool -y
 sudo apt install libinput-tools -y
 git clone https://github.com/bulletmark/libinput-gestures.git
@@ -84,30 +102,22 @@ cd libinput-gestures
 sudo make install
 mv libinput-gestures.conf libinput-gestures.conf.old
 mv ~/installer/libinput-gestures.conf ~/libinput-gestures/libinput
-cd
+cd ~
 
 # AppImages
-cd
-mkdir Applications
+mkdir ~/Applications
 
 # Plexamp
-cd ~/Applications
-wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage
+wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage -P ~/Applications/
 
 # Red Alert
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage
-
-cd
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage -P /Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage -P /Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage -P /Applications/
 
 # pip3 installs
 pip3 install jupyter
 pip3 install pandas
-
-# Cinnamon
-mv ~/.cinnamon ~/.cinnamon-old
-cp ./.cinnamon ~/.cinnamon
 
 # zsh
 echo 'alias update="sudo apt update && sudo apt list --upgradable"' >> ~/.zshrc
