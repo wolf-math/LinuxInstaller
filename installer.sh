@@ -96,3 +96,16 @@ wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-
 # pip3 installs
 pip3 install jupyter
 pip3 install pandas
+
+# Cinnamon
+mv ~/.cinnamon ~/.cinnamon-old
+cp ./cinnamon ~/.cinnamon
+
+# zsh
+echo 'alias update="sudo apt update && sudo apt list --upgradable"' >> ~/.zshrc
+echo 'alias upgrade="sudo apt upgrade"' >> ~/.zshrc
+echo 'alias gestures="libinput-gestures-setup restart"' >> ~/.zshrc
+echo 'alias server="ssh 192.168.50.2"' >> ~/.zshrc
+
+# Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
