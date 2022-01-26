@@ -14,7 +14,6 @@ sudo apt upgrade -y
 sudo apt install zsh -y
 sudo apt install tilda -y
 sudo apt install plank -y
-sudo apt install appimagelauncher -y
 sudo apt install asunder -y
 sudo apt install cheese -y
 sudo apt install gedit -y
