@@ -105,25 +105,25 @@ mv ~/installer/libinput-gestures.conf ~/libinput-gestures/libinput
 cd ~
 
 # AppImages
-mkdir ~/Applications
+mkdir ~/appimages
 
 # Plexamp
-wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage -P ~/Applications/
+wget https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-3.9.1.AppImage -P ~/appimages/
 
 # Red Alert
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage -P ~/Applications/
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage -P ~/Applications/
-wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage -P ~/Applications/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Red-Alert-x86_64.AppImage -P ~/appimages/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Tiberian-Dawn-x86_64.AppImage -P ~/appimages/
+wget https://github.com/OpenRA/OpenRA/releases/download/release-20210321/OpenRA-Dune-2000-x86_64.AppImage -P ~/appimages/
 
 # pip3 installs
 pip3 install jupyter
 pip3 install pandas
 
-# zsh
-echo 'alias update="sudo apt update && sudo apt list --upgradable"' >> ~/.zshrc
-echo 'alias upgrade="sudo apt upgrade"' >> ~/.zshrc
-echo 'alias gestures="libinput-gestures-setup restart"' >> ~/.zshrc
-echo 'alias server="ssh 192.168.50.2"' >> ~/.zshrc
+# zsh - not sure how to move these without the omz installer overwriting
+# echo 'alias update="sudo apt update && sudo apt list --upgradable"' >> ~/.zshrc
+# echo 'alias upgrade="sudo apt upgrade"' >> ~/.zshrc
+# echo 'alias gestures="libinput-gestures-setup restart"' >> ~/.zshrc
+# echo 'alias server="ssh 192.168.50.2"' >> ~/.zshrc
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
