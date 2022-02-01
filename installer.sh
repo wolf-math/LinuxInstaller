@@ -29,6 +29,9 @@ sudo apt install python3-pip -y
 sudo apt install virtualbox -y
 sudo apt install vlc -y
 sudo apt install whatsapp-desktop -y
+sudo apt install ffmpeg -y
+sudo apt install mkvtoolnix -y
+sudo apt install mkvtoolnix-gui -y
 sudo apt purge hexchat -y
 sudo apt purge thunderbird -y
 npm install -g npx
