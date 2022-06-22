@@ -19,6 +19,7 @@ sudo apt install cheese -y
 sudo apt install gedit -y
 sudo apt install gparted -y
 sudo apt install easytag -y
+sudo apt install flac -y
 sudo apt install flameshot -y
 sudo apt install idle3 -y
 sudo apt install keepassx -y
@@ -46,10 +47,6 @@ sudo apt-add-repository ppa:yktooo/ppa -y
 # AppimageLauncher
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y
 
-sudo apt update
-sudo apt install indicator-sound-switcher -y
-sudo apt install appimagelauncher -y
-sudo apt install ulauncher -y
 
 # wget
 # chrome
@@ -75,7 +72,6 @@ wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signa
 cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
  sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop -y
 
 # Slack
 wget https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-desktop-4.23.0-amd64.deb
@@ -86,8 +82,13 @@ rm -f slack-desktop-4.23.0-amd64.deb
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
 sudo touch /etc/apt/sources.list.d/insync.list
 sudo sh -c 'echo "deb http://apt.insync.io/mint una non-free contrib" >> /etc/apt/sources.list.d/insync.list'
+
 sudo apt update
-sudo apt install insync
+sudo apt install indicator-sound-switcher -y
+sudo apt install appimagelauncher -y
+sudo apt install ulauncher -y
+sudo apt install insync -y
+sudo apt install signal-desktop -y
 
 # Bottom
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.6/bottom_0.6.6_amd64.deb
