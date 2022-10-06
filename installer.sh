@@ -9,38 +9,37 @@ cd
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 # apt
-sudo apt update
-sudo apt upgrade -y
-sudo apt install zsh -y
-sudo apt install tilda -y
-sudo apt install plank -y
-sudo apt install asunder -y
-sudo apt install cheese -y
-sudo apt install gedit -y
-sudo apt install gparted -y
-sudo apt install easytag -y
-sudo apt install flac -y
-sudo apt install flameshot -y
-sudo apt install idle3 -y
-sudo apt install keepassx -y
-sudo apt install nodejs -y
-sudo apt install npm -y
-sudo apt install pinta -y
-sudo apt install python3-pip -y
-sudo apt install virtualbox -y
-sudo apt install vlc -y
-sudo apt install whatsapp-desktop -y
-sudo apt install ffmpeg -y
-sudo apt install mkvtoolnix -y
-sudo apt install mkvtoolnix-gui -y
+echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
+sudo apt update && sudo apt install nala
+sudo nala update
+sudo nala upgrade -y
+sudo nala install zsh -y
+sudo nala install tilda -y
+sudo nala install plank -y
+sudo nala install asunder -y
+sudo nala install cheese -y
+sudo nala install gedit -y
+sudo nala install gparted -y
+sudo nala install easytag -y
+sudo nala install flac -y
+sudo nala install flameshot -y
+sudo nala install idle3 -y
+sudo nala install keepassx -y
+sudo nala install nodejs -y
+sudo nala install npm -y
+sudo nala install pinta -y
+sudo nala install python3-pip -y
+sudo nala install virtualbox -y
+sudo nala install vlc -y
+sudo nala install whatsapp-desktop -y
+sudo nala install ffmpeg -y
+sudo nala install mkvtoolnix -y
+sudo nala install mkvtoolnix-gui -y
 sudo apt purge hexchat -y
 sudo apt purge thunderbird -y
 npm install -g npx
 
 # PPAs
-# Ulancher
-sudo add-apt-repository ppa:agornostal/ulauncher -y
-
 # SoundSwitcher
 sudo apt-add-repository ppa:yktooo/ppa -y
 
@@ -83,29 +82,16 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
 sudo touch /etc/apt/sources.list.d/insync.list
 sudo sh -c 'echo "deb http://apt.insync.io/mint una non-free contrib" >> /etc/apt/sources.list.d/insync.list'
 
-sudo apt update
-sudo apt install indicator-sound-switcher -y
-sudo apt install appimagelauncher -y
-sudo apt install ulauncher -y
-sudo apt install insync -y
-sudo apt install signal-desktop -y
+sudo nala update
+sudo nala install indicator-sound-switcher -y
+sudo nala install appimagelauncher -y
+sudo nala install insync -y
+sudo nala install signal-desktop -y
 
 # Bottom
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.6/bottom_0.6.6_amd64.deb
 sudo dpkg -i bottom_0.6.6_amd64.deb
 rm -f bottom_0.6.6_amd64.deb
-
-# others
-# libinputgestures
-cd ~
-sudo apt install wmctrl xdotool -y
-sudo apt install libinput-tools -y
-git clone https://github.com/bulletmark/libinput-gestures.git
-cd libinput-gestures
-sudo make install
-mv libinput-gestures.conf libinput-gestures.conf.old
-mv ~/installer/libinput-gestures.conf ~/libinput-gestures/libinput
-cd ~
 
 # AppImages
 mkdir ~/appimages
